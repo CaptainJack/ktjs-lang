@@ -9,10 +9,6 @@ plugins {
 
 group = "ru.capjack.tool"
 
-capjackBintray {
-	name = "tool-ktjs-lang"
-}
-
 repositories {
 	jcenter()
 }
