@@ -4,13 +4,13 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 plugins {
 	id("kotlin2js") version "1.3.21"
 	id("nebula.release") version "9.2.0"
-	id("ru.capjack.capjack-bintray") version "0.16.0"
+	id("ru.capjack.capjack-bintray") version "0.16.1"
 }
 
 group = "ru.capjack.tool"
 
-tasks.withType<KotlinJsCompile> {
-	kotlinOptions.moduleKind = MODULE_UMD
+capjackBintray {
+	name = "tool-ktjs-lang"
 }
 
 repositories {
@@ -19,4 +19,8 @@ repositories {
 
 dependencies {
 	implementation(kotlin("stdlib-js"))
+}
+
+tasks.withType<KotlinJsCompile> {
+	kotlinOptions.moduleKind = MODULE_UMD
 }
