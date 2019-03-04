@@ -20,3 +20,8 @@ dependencies {
 tasks.withType<KotlinJsCompile> {
 	kotlinOptions.moduleKind = MODULE_UMD
 }
+
+tasks.create<Jar>("sourcesJar") {
+	archiveClassifier.set("sources")
+	from(sourceSets.main.get().allSource)
+}
